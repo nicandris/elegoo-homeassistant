@@ -51,8 +51,8 @@ _RESIN_PRINT_STATUS_OPTIONS: list[str] = [
 _FDM_PRINT_STATUS_OPTIONS: list[str] = [s.name.lower() for s in ElegooPrintStatus]
 
 
-# After a reboot the Centauri Carbon clock restarts at 1970 and does not sync,
-# even with internet access. Job times before this are treated as unset.
+# The printer sometimes reports job times near 1970 (seen on a Centauri Carbon
+# after a restart). Job times before this are treated as unset.
 _MIN_VALID_JOB_TIME = datetime(2000, 1, 1, tzinfo=UTC)
 
 

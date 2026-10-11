@@ -1,10 +1,9 @@
 """
-Tests for job timestamps from a printer whose clock restarted at 1970.
+Tests for job timestamps the printer reports near 1970.
 
-A printer whose clock restarted at 1970 (seen on the Centauri Carbon after a
-reboot, despite internet access) reports BeginTime/EndTime counted from
-1970, which HA showed as "1 January 1970". Begin time falls back to the
-elapsed print time instead, and an unset end time reads as unknown.
+The printer sometimes reports BeginTime/EndTime near 1970 (seen on a Centauri
+Carbon after a restart), which HA showed as "1 January 1970". Begin time falls back
+to the elapsed print time instead, and an unset end time reads as unknown.
 """
 
 from datetime import UTC, datetime, timedelta
